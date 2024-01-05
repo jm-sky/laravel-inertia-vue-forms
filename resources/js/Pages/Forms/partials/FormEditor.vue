@@ -54,6 +54,8 @@ function removeField(field: IFormFieldDefinition) {
             <select v-model="field.type" :id="`form.field.${index}.type`" class="rounded border border-gray-300 shadow-sm">
               <option value="text">Text</option>
               <option value="boolean">Boolean</option>
+              <option value="number">Number</option>
+              <option value="date">Date</option>
             </select>
           </td>
           <td>

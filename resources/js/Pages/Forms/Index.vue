@@ -22,7 +22,7 @@ function deleteForm(form: IForm) {
       <h2 class="flex row justify-between items-center font-semibold text-xl text-gray-800 leading-tight">
         {{ $t('Forms') }}
 
-        <ButtonLink :href="route('forms.create')">
+        <ButtonLink :href="route('forms.create')" class="-my-2">
           <FaIcon icon="plus" mr /> Create
         </ButtonLink>
       </h2>
@@ -48,7 +48,9 @@ function deleteForm(form: IForm) {
 
               <tr v-for="form in forms" :key="form.id">
                 <td class="p-2">{{ form.id }}</td>
-                <td class="p-2">{{ form.name }}</td>
+                <td class="p-2">
+                  <Link :href="route('forms.show', { form })" class="font-semibold hover:text-blue-500">{{ form.name }}</Link>
+                </td>
                 <td class="p-2 flex gap-3 text-gray-500">
                   <Link :href="route('forms.edit', { form })"><FaIcon icon="edit" mr /></Link>
                   <button type="button" @click="deleteForm(form)" class="hover:text-red-600"><FaIcon icon="trash" mr /></button>

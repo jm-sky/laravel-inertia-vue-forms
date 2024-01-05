@@ -11,6 +11,6 @@ export interface IForm extends IFormData {
 
 export interface IFormFieldDefinition {
     label: string
-    type: 'text' | 'boolean'
+    type: 'text' | 'boolean' | 'number' | 'date'
     required: boolean
 }

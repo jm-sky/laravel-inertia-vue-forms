@@ -32,9 +32,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/forms', [FormController::class, 'index'])->name('forms.index');
     Route::get('/forms/new', [FormController::class, 'create'])->name('forms.create');
     Route::post('/forms/new', [FormController::class, 'store'])->name('forms.store');
-    Route::get('/forms/{form}', [FormController::class, 'edit'])->name('forms.edit');
-    Route::post('/forms/{form}', [FormController::class, 'update'])->name('forms.update');
+    Route::get('/forms/{form}/edit', [FormController::class, 'edit'])->name('forms.edit');
+    Route::post('/forms/{form}/edit', [FormController::class, 'update'])->name('forms.update');
     Route::delete('/forms/{form}', [FormController::class, 'delete'])->name('forms.delete');
+    Route::get('/forms/{form}', [FormController::class, 'show'])->name('forms.show');
+    Route::post('/forms/{form}', [FormController::class, 'fill'])->name('forms.fill');
 });
 
 

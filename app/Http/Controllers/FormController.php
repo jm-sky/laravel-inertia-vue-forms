@@ -63,4 +63,10 @@ class FormController extends Controller
 
         return redirect()->route('forms.index');
     }
+
+    public function show(Form $form): Response {
+        return Inertia::render('Forms/Show', [
+            'form' => $form,
+        ]);
+    }
 }
